@@ -63,25 +63,38 @@ int main(int argc, char **argv){
  * @return int index
  */
 int BSearch(int ar[], int len, int target){
+    /** 첫번째 위치 초기화 설정 */
     int first = 0;
+    /** 마지막 위치 설정 */
     int last = len - 1;
+    /** 중간 값을 저장하기 위한 변수 선언 */
     int mid;
+    /** 연산 횟수를 저장하기 위한 변수 */
     int opCount = 0;
-
+    /** 처음 위치가 마지막 위취보다 커질 경우 종료하는 반복문 */
     while(first <= last){
+        /** 중간 값 위치 구해서 저장 */
         mid = (first + last) / 2;
+        /** 원하는 값이 배열에 중간 값에 위치할 경우 */
         if(target == ar[mid]){
+            /** 현재 인덱스 값 반환 */
             return mid;
+        /** 원하는 값이 중간 값에 위치 하지 않을 경우 */
         }else{
+            /** 원하는 값이 중간 값보다 밑에 있을 경우 */
             if(target < mid - 1){
+                /** 마지막 값을 중간 값보다 1 작게 설정 */
                 last = mid - 1;
+            /** 첫번째 값을 중간 값보다 1 크게 설정 */
             }else{
                 first = mid + 1;
             }
         }
+        /** 연산 횟수 1 증가 */
         opCount ++;
-
     }
+    /** 총 진행한 회수를 출력 */
     printf("비교연산횟수 : %d \r\n", opCount);
+    /** 없을 시 -1 반환 */
     return -1;
 }
