@@ -46,6 +46,8 @@ int main(){
             /** 마지막의 다음 부분을 새로 생성된 노드로 설정 */
             tail->next = newNode;
         }
+        /** 처음 값이 들어오면, head Node와 tail Node를 같은 값으로 설정 */
+        /** head 값이 있으면, head의 다음 값을 넣어 주는 것 */
         /** 마지막 노드를 현재 노드로 설정 */
         tail = newNode;
 
